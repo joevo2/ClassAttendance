@@ -1,0 +1,34 @@
+<ion-view title="Create Account">
+  <ion-content padding="true" class="has-header">
+    <form class="list" ng-submit="doSignup()">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">First Name</span>
+        <input type="text" placeholder="Exp: Bob" ng-model="signup.Name">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Last Name</span>
+        <input type="text" placeholder="Exp: Jacob" ng-model="signup.lastName">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="6 character and above" ng-model="signup.password">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Confirm password</span>
+        <input type="password" placeholder="Retype your password" ng-model="signup.confirmPassword">
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Account type
+        </div>
+        <select>
+          <option>Student</option>
+          <option>Lecturer</option>
+          <option>Admin</option>
+        </select>
+      </label>
+      <div class="spacer" style="width: 300px; height: 1dw0px;"></div>
+      <button type="submit" class="button button-positive button-block button-full">Create account</button>
+    </form>
+  </ion-content>
+</ion-view>
