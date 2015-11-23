@@ -1,4 +1,4 @@
-angular.module('app.controllers', ['app.login'])   
+angular.module('app.controllers', ['app.login', 'app.signup'])   
 .controller('homeCtrl', function($scope) {
 
 })
