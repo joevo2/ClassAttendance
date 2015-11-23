@@ -10,7 +10,8 @@ angular.module('app',
   'app.controllers',
   'app.routes', 
   'app.services', 
-  'app.directives'])
+  'app.directives',
+  'validation.match'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

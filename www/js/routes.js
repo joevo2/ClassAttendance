@@ -1,6 +1,13 @@
 angular.module('app.routes', [])
 
 .config(function($stateProvider, $urlRouterProvider) {
+  // Initialise parse
+  Parse.initialize("4nqAmOf9scv9vWFCdeZkNMH0yHSXAAmb3Pnf5mk9", "b2wahr5y1nRpV4vlB3mLWBNTtKVBriHiq3Ao3LZg");
+  
+  var path = '/login';
+  if (Parse.User.current()) {
+    path = '/home';
+  }
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -33,6 +40,6 @@ angular.module('app.routes', [])
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise(path);
 
 });
