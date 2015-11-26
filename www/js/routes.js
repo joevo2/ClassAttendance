@@ -3,7 +3,7 @@ angular.module('app.routes', [])
 .config(function($stateProvider, $urlRouterProvider) {
   // Initialise parse
   Parse.initialize("4nqAmOf9scv9vWFCdeZkNMH0yHSXAAmb3Pnf5mk9", "b2wahr5y1nRpV4vlB3mLWBNTtKVBriHiq3Ao3LZg");
-  
+
   var path = '/login';
   if (Parse.User.current()) {
     path = '/home';
@@ -25,6 +25,11 @@ angular.module('app.routes', [])
       url: '/signup',
       templateUrl: 'templates/signup.html',
       controller: 'signupCtrl'
+    })
+
+    .state('admin', {
+      url: '/admin',
+      templateUrl: 'templates/admin.html',
     })
 
     .state('home', {

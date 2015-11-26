@@ -8,7 +8,12 @@ angular.module('app.login', [])
           $ionicHistory.nextViewOptions({
             disableBack: true
           });
-          $state.go('home');
+          if (user.get('accountType') === 'Admin') {
+            $state.go('admin');
+          }
+          else {
+            $state.go('home');
+          }
           delete $scope.login;
         },
         error: function(user, error) {
