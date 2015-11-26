@@ -1,5 +1,5 @@
 angular.module('app.signup', [])
-  .controller('signupCtrl', function($scope) {
+  .controller('signupCtrl', function($scope, $state, $ionicHistory) {
     $scope.signup = {};
     // Login
     $scope.doSignup = function() {
@@ -15,6 +15,10 @@ angular.module('app.signup', [])
         success: function(user) {
           // Hooray! Let them use the app now.
           alert("Successfully created account for " + $scope.signup.firstName + " " + $scope.signup.lastName);
+          $ionicHistory.nextViewOptions({
+            disableBack: true
+          });
+          $state.go('login');
         },
         error: function(user, error) {
           // Show the error message somewhere and let the user try again.

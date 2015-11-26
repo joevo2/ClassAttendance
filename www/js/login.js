@@ -1,5 +1,5 @@
 angular.module('app.login', [])
-  .controller('loginCtrl', function($scope, $state, $ionicHistory) {
+  .controller('loginCtrl', function($rootScope, $scope, $state, $ionicHistory) {
     $scope.login = {};
     // Login
     $scope.doLogin = function() {
@@ -9,6 +9,7 @@ angular.module('app.login', [])
             disableBack: true
           });
           $state.go('home');
+          delete $scope.login;
         },
         error: function(user, error) {
           // The login failed. Check error to see why.

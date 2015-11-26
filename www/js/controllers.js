@@ -12,8 +12,11 @@ angular.module('app.controllers', ['app.login', 'app.signup'])
     };
     $scope.closePopover = function() {
       $scope.popover.hide();
-      $scope.popover.remove();
     };
+    //Cleanup the popover when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.popover.remove();
+    });
 
     // Logout
     $scope.logout = function() {
