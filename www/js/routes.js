@@ -2,7 +2,7 @@ angular.module('app.routes', [])
 .config(function($stateProvider, $urlRouterProvider) {
   // Parse Initilise  with API key
   Parse.initialize("4nqAmOf9scv9vWFCdeZkNMH0yHSXAAmb3Pnf5mk9", "b2wahr5y1nRpV4vlB3mLWBNTtKVBriHiq3Ao3LZg");
-  
+
   var path = '/login';
   if (Parse.User.current()) {
     path = '/home';
@@ -25,6 +25,7 @@ angular.module('app.routes', [])
     .state('admin', {
       url: '/admin',
       templateUrl: 'templates/admin.html',
+      controller: 'adminCtrl'
     })
 
     .state('home', {
